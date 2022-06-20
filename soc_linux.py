@@ -8,6 +8,7 @@ import os
 import json
 import shutil
 import subprocess
+from this import s
 
 from migen import *
 
@@ -23,6 +24,11 @@ from litex.soc.cores.icap import ICAPBitstream
 from litex.soc.cores.clock import S7MMCM
 
 from litex.tools.litex_json2dts_linux import generate_dts
+
+from wb_send import RTLsend
+from wb_receive import RTLreceive
+
+from pprint import pprint
 
 # SoCLinux -----------------------------------------------------------------------------------------
 
@@ -62,7 +68,7 @@ def SoCLinux(soc_cls, **kwargs):
 
         # ICAP Bitstream (Xilinx only) -------------------------------------------------------------
         def add_icap_bitstream(self):
-            self.submodules.icap_bit = ICAPBitstream();
+            self.submodules.icap_bit = ICAPBitstream()
 
         # MMCM (Xilinx only) -----------------------------------------------------------------------
         def add_mmcm(self, nclkout):
@@ -156,5 +162,17 @@ def SoCLinux(soc_cls, **kwargs):
             doc_dir = os.path.join("build", board_name, "doc")
             generate_docs(self, doc_dir)
             os.system("sphinx-build -M html {}/ {}/_build".format(doc_dir, doc_dir))
+
+
+        def add_test_core(self):
+            self.submodules.send_core = RTLsend(self.platform)
+            self.submodules.recv_core = RTLreceive(self.platform)
+            self.add_csr("send_core")
+            self.add_csr("recv_core")
+            self.comb += self.recv_core.packet_out.eq(self.send_core.packet_out)
+            self.comb += self.recv_core.packet_out_valid.eq(self.send_core.packet_out_valid)
+            #self.recv_core.RTLreceive.packet_out.eq(self.send_core.RLTsend.packet_out)
+            #self.recv_core.RTLreceive.packet_out_valid.eq(self.send_core.RLTsend.packet_out_valid)
+
 
     return _SoCLinux(**kwargs)

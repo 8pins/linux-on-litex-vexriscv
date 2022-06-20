@@ -45,8 +45,8 @@ class Board:
 class Acorn(Board):
     soc_kwargs = {"uart_name": "jtag_uart", "sys_clk_freq": int(150e6)}
     def __init__(self):
-        from litex_boards.targets import sqrl_acorn
-        Board.__init__(self, sqrl_acorn.BaseSoC, soc_capabilities={
+        from litex_boards.targets import acorn
+        Board.__init__(self, acorn.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # Storage
@@ -73,8 +73,8 @@ class AcornPCIe(Board):
 
 class Arty(Board):
     def __init__(self):
-        from litex_boards.targets import digilent_arty
-        Board.__init__(self, digilent_arty.BaseSoC, soc_capabilities={
+        from litex_boards.targets import arty
+        Board.__init__(self, arty.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -99,8 +99,8 @@ class ArtyA7(Arty): pass
 
 class ArtyS7(Board):
     def __init__(self):
-        from litex_boards.targets import digilent_arty_s7
-        Board.__init__(self, digilent_arty_s7.BaseSoC, soc_capabilities={
+        from litex_boards.targets import arty_s7
+        Board.__init__(self, arty_s7.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # Storage
@@ -123,8 +123,8 @@ class ArtyS7(Board):
 
 class NeTV2(Board):
     def __init__(self):
-        from litex_boards.targets import kosagi_netv2
-        Board.__init__(self, kosagi_netv2.BaseSoC, soc_capabilities={
+        from litex_boards.targets import netv2
+        Board.__init__(self, netv2.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -142,8 +142,8 @@ class NeTV2(Board):
 
 class Genesys2(Board):
     def __init__(self):
-        from litex_boards.targets import digilent_genesys2
-        Board.__init__(self, digilent_genesys2.BaseSoC, soc_capabilities={
+        from litex_boards.targets import genesys2
+        Board.__init__(self, genesys2.BaseSoC, soc_capabilities={
             # Communication
             "usb_fifo",
             "ethernet",
@@ -173,8 +173,8 @@ class KC705(Board):
 
 class VC707(Board):
     def __init__(self):
-        from litex_boards.targets import xilinx_vc707
-        Board.__init__(self, xilinx_vc707.BaseSoC, soc_capabilities={
+        from litex_boards.targets import vc707
+        Board.__init__(self, vc707.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -190,8 +190,8 @@ class VC707(Board):
 
 class KCU105(Board):
     def __init__(self):
-        from litex_boards.targets import xilinx_kcu105
-        Board.__init__(self, xilinx_kcu105.BaseSoC, soc_capabilities={
+        from litex_boards.targets import kcu105
+        Board.__init__(self, kcu105.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -203,8 +203,8 @@ class KCU105(Board):
 
 class ZCU104(Board):
     def __init__(self):
-        from litex_boards.targets import xilinx_zcu104
-        Board.__init__(self, xilinx_zcu104.BaseSoC, soc_capabilities={
+        from litex_boards.targets import zcu104
+        Board.__init__(self, zcu104.BaseSoC, soc_capabilities={
             # Communication
             "serial",
         })
@@ -213,8 +213,8 @@ class ZCU104(Board):
 
 class Nexys4DDR(Board):
     def __init__(self):
-        from litex_boards.targets import digilent_nexys4ddr
-        Board.__init__(self, digilent_nexys4ddr.BaseSoC, soc_capabilities={
+        from litex_boards.targets import nexys4ddr
+        Board.__init__(self, nexys4ddr.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -228,8 +228,8 @@ class Nexys4DDR(Board):
 
 class NexysVideo(Board):
     def __init__(self):
-        from litex_boards.targets import digilent_nexys_video
-        Board.__init__(self, digilent_nexys_video.BaseSoC, soc_capabilities={
+        from litex_boards.targets import nexys_video
+        Board.__init__(self, nexys_video.BaseSoC, soc_capabilities={
             # Communication
             "usb_fifo",
             # Storage
@@ -243,8 +243,8 @@ class NexysVideo(Board):
 class MiniSpartan6(Board):
     soc_kwargs = {"l2_size" : 2048} # Use Wishbone and L2 for memory accesses.
     def __init__(self):
-        from litex_boards.targets import scarabhardware_minispartan6
-        Board.__init__(self, scarabhardware_minispartan6.BaseSoC, soc_capabilities={
+        from litex_boards.targets import minispartan6
+        Board.__init__(self, minispartan6.BaseSoC, soc_capabilities={
             # Communication
             "usb_fifo",
             # Storage
@@ -258,8 +258,8 @@ class MiniSpartan6(Board):
 class Pipistrello(Board):
     soc_kwargs = {"l2_size" : 2048} # Use Wishbone and L2 for memory accesses.
     def __init__(self):
-        from litex_boards.targets import saanlima_pipistrello
-        Board.__init__(self, saanlima_pipistrello.BaseSoC, soc_capabilities={
+        from litex_boards.targets import pipistrello
+        Board.__init__(self, pipistrello.BaseSoC, soc_capabilities={
             # Communication
             "serial",
         })
@@ -268,8 +268,8 @@ class Pipistrello(Board):
 
 class XCU1525(Board):
     def __init__(self):
-        from litex_boards.targets import sqrl_xcu1525
-        Board.__init__(self, sqrl_xcu1525.BaseSoC, soc_capabilities={
+        from litex_boards.targets import xcu1525
+        Board.__init__(self, xcu1525.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # Storage
@@ -284,8 +284,8 @@ class AlveoU280(Board):
         "sys_clk_freq" : 250e6
     }
     def __init__(self):
-        from litex_boards.targets import xilinx_alveo_u280
-        Board.__init__(self, xilinx_alveo_u280.BaseSoC, soc_capabilities={
+        from litex_boards.targets import alveo_u280
+        Board.__init__(self, alveo_u280.BaseSoC, soc_capabilities={
             # Communication
             "serial"
         })
@@ -294,8 +294,8 @@ class AlveoU280(Board):
 
 class AlveoU250(Board):
     def __init__(self):
-        from litex_boards.targets import xilinx_alveo_u250
-        Board.__init__(self, xilinx_alveo_u250.BaseSoC, soc_capabilities={
+        from litex_boards.targets import alveo_u250
+        Board.__init__(self, alveo_u250.BaseSoC, soc_capabilities={
             # Communication
             "serial"
         })
@@ -305,8 +305,8 @@ class AlveoU250(Board):
 class SDS1104XE(Board):
     soc_kwargs = {"l2_size" : 8192} # Use Wishbone and L2 for memory accesses.
     def __init__(self):
-        from litex_boards.targets import siglent_sds1104xe
-        Board.__init__(self, siglent_sds1104xe.BaseSoC, soc_capabilities={
+        from litex_boards.targets import sds1104xe
+        Board.__init__(self, sds1104xe.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -349,8 +349,8 @@ class MNT_RKX7(Board):
 
 class STLV7325(Board):
     def __init__(self):
-        from litex_boards.targets import aliexpress_stlv7325
-        Board.__init__(self, aliexpress_stlv7325.BaseSoC, soc_capabilities={
+        from litex_boards.targets import stlv7325
+        Board.__init__(self, stlv7325.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # Storage
@@ -378,8 +378,8 @@ class DecklinkQuadHDMIRecorder(Board):
 
 class VersaECP5(Board):
     def __init__(self):
-        from litex_boards.targets import lattice_versa_ecp5
-        Board.__init__(self, lattice_versa_ecp5.BaseSoC, soc_capabilities={
+        from litex_boards.targets import versa_ecp5
+        Board.__init__(self, versa_ecp5.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -390,8 +390,8 @@ class VersaECP5(Board):
 class ULX3S(Board):
     soc_kwargs = {"l2_size" : 2048} # Use Wishbone and L2 for memory accesses.
     def __init__(self):
-        from litex_boards.targets import radiona_ulx3s
-        Board.__init__(self, radiona_ulx3s.BaseSoC, soc_capabilities={
+        from litex_boards.targets import ulx3s
+        Board.__init__(self, ulx3s.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # Storage
@@ -405,8 +405,8 @@ class ULX3S(Board):
 class HADBadge(Board):
     soc_kwargs = {"l2_size" : 2048} # Use Wishbone and L2 for memory accesses.
     def __init__(self):
-        from litex_boards.targets import hackaday_hadbadge
-        Board.__init__(self, hackaday_hadbadge.BaseSoC, soc_capabilities={
+        from litex_boards.targets import hadbadge
+        Board.__init__(self, hadbadge.BaseSoC, soc_capabilities={
             # Communication
             "serial",
         })
@@ -419,8 +419,10 @@ class HADBadge(Board):
 class OrangeCrab(Board):
     soc_kwargs = {"sys_clk_freq" : int(64e6) } # Increase sys_clk_freq to 64MHz (48MHz default).
     def __init__(self):
-        from litex_boards.targets import gsd_orangecrab
-        Board.__init__(self, gsd_orangecrab.BaseSoC, soc_capabilities={
+        from litex_boards.targets import orangecrab
+        os.system("git clone https://github.com/litex-hub/valentyusb -b hw_cdc_eptri")
+        sys.path.append("valentyusb") # FIXME: do proper install of ValentyUSB.
+        Board.__init__(self, orangecrab.BaseSoC, soc_capabilities={
             # Communication
             "usb_acm",
             # Buses
@@ -434,8 +436,8 @@ class OrangeCrab(Board):
 class ButterStick(Board):
     soc_kwargs = {"uart_name": "jtag_uart"}
     def __init__(self):
-        from litex_boards.targets import gsd_butterstick
-        Board.__init__(self, gsd_butterstick.BaseSoC, soc_capabilities={
+        from litex_boards.targets import butterstick
+        Board.__init__(self, butterstick.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -470,8 +472,8 @@ class TrellisBoard(Board):
 
 class ECPIX5(Board):
     def __init__(self):
-        from litex_boards.targets import lambdaconcept_ecpix5
-        Board.__init__(self, lambdaconcept_ecpix5.BaseSoC, soc_capabilities={
+        from litex_boards.targets import ecpix5
+        Board.__init__(self, ecpix5.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             "ethernet",
@@ -517,8 +519,8 @@ class De10Nano(Board):
         "l2_size"           : 2048, # Use Wishbone and L2 for memory accesses.
     }
     def __init__(self):
-        from litex_boards.targets import terasic_de10nano
-        Board.__init__(self, terasic_de10nano.BaseSoC, soc_capabilities={
+        from litex_boards.targets import de10nano
+        Board.__init__(self, de10nano.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # Storage
@@ -533,8 +535,8 @@ class De10Nano(Board):
 class De0Nano(Board):
     soc_kwargs = {"l2_size" : 2048} # Use Wishbone and L2 for memory accesses.
     def __init__(self):
-        from litex_boards.targets import terasic_de0nano
-        Board.__init__(self, terasic_de0nano.BaseSoC, soc_capabilities={
+        from litex_boards.targets import de0nano
+        Board.__init__(self, de0nano.BaseSoC, soc_capabilities={
             # Communication
             "serial",
         })
@@ -544,8 +546,8 @@ class De0Nano(Board):
 class De1SoC(Board):
     soc_kwargs = {"l2_size" : 2048} # Use Wishbone and L2 for memory accesses.
     def __init__(self):
-        from litex_boards.targets import terasic_de1soc
-        Board.__init__(self, terasic_de1soc.BaseSoC, soc_capabilities={
+        from litex_boards.targets import de1soc
+        Board.__init__(self, de1soc.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # GPIOs
@@ -589,8 +591,8 @@ class Qmtech_EP4CE55(Board):
 class TrionT120BGA576DevKit(Board):
     soc_kwargs = {"l2_size" : 2048} # Use Wishbone and L2 for memory accesses.
     def __init__(self):
-        from litex_boards.targets import efinix_trion_t120_bga576_dev_kit
-        Board.__init__(self, efinix_trion_t120_bga576_dev_kit.BaseSoC, soc_capabilities={
+        from litex_boards.targets import trion_t120_bga576_dev_kit
+        Board.__init__(self, trion_t120_bga576_dev_kit.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # GPIOs
@@ -603,8 +605,8 @@ class TitaniumTi60F225DevKit(Board):
         "sys_clk_freq"  : 300e6,
     }
     def __init__(self):
-        from litex_boards.targets import efinix_titanium_ti60_f225_dev_kit
-        Board.__init__(self, efinix_titanium_ti60_f225_dev_kit.BaseSoC, soc_capabilities={
+        from litex_boards.targets import titanium_ti60_f225_dev_kit
+        Board.__init__(self, titanium_ti60_f225_dev_kit.BaseSoC, soc_capabilities={
             # Communication
             "serial",
             # Storage
@@ -689,6 +691,9 @@ def main():
     parser.add_argument("--fdtoverlays",    default="",                  help="Device Tree Overlays to apply.")
     VexRiscvSMP.args_fill(parser)
     args = parser.parse_args()
+    
+    # print(str(args))
+    # args la 1 namespace (dictionary)
 
     # Board(s) selection ---------------------------------------------------------------------------
     if args.board == "all":
@@ -758,11 +763,11 @@ def main():
 
         # SoC peripherals --------------------------------------------------------------------------
         if board_name in ["arty", "arty_a7"]:
-            from litex_boards.platforms.digilent_arty import _sdcard_pmod_io
+            from litex_boards.platforms.arty import _sdcard_pmod_io
             board.platform.add_extension(_sdcard_pmod_io)
 
         if board_name in ["orangecrab"]:
-            from litex_boards.platforms.gsd_orangecrab import feather_i2c
+            from litex_boards.platforms.orangecrab import feather_i2c
             board.platform.add_extension(feather_i2c)
 
         if "mmcm" in board.soc_capabilities:
@@ -787,6 +792,9 @@ def main():
             soc.add_xadc()
         if "icap_bitstream" in board.soc_capabilities:
             soc.add_icap_bitstream()
+
+        # add test_core
+        soc.add_test_core() 
 
         # Build ------------------------------------------------------------------------------------
         build_dir = os.path.join("build", board_name)
@@ -822,5 +830,338 @@ def main():
         if args.doc:
             soc.generate_doc(board_name)
 
+        
+
+# TYPES OF OBJECTS
+
+    #    print(type(board))  # class __main__.KC705
+    #    print(type(soc))    # class soc_linux.SoCLinux.<locals>._SocLinux
+    #    print(type(board.soc_cls))
+
+# ARGUMENTS DEBUG
+    
+    #f_args_debug = open('debug_args.txt','w+')
+    #f_args_debug.write(str(args))
+    #f_args_debug.close()
+
+# PROPERTIES OF OBJECTS
+
+    from pprint import pprint
+
+    # "board" properties
+
+    # pprint(vars(board))
+        # {'platform': <litex_boards.platforms.xilinx_kc705.Platform object at 0x7fdd7365ef10>,
+        #  'soc_capabilities': {'ethernet', 'sdcard', 'serial', 'xadc', 'leds'},
+        #  'soc_cls': <class 'litex_boards.targets.xilinx_kc705.BaseSoC'>,
+        #  'soc_constants': {}}
+
+    # pprint(vars(board.soc_cls))
+        # mappingproxy({'__doc__': None,
+        #               '__init__': <function BaseSoC.__init__ at 0x7fdd7340d700>,
+        #               '__module__': 'litex_boards.targets.xilinx_kc705'})
+
+    # pprint(vars(board.platform))
+        # {'constraint_manager': <litex.build.generic_platform.ConstraintManager object at 0x7fd6827c6130>,
+        #  'device': 'xc7k325t-ffg900-2',
+        #  'edifs': set(),
+        #  'finalized': True,
+        #  'ips': {},
+        #  'name': 'xilinx_kc705',
+        #  'output_dir': '/home/eightpins/litex/linux-on-litex-vexriscv/build/kc705',
+        #  'sources': [('/home/eightpins/litex/pythondata-cpu-vexriscv-smp/pythondata_cpu_vexriscv_smp/verilog/Ram_1w_1rs_Generic.v',
+        #               'verilog',
+        #               'work'),
+        #              ('/home/eightpins/litex/pythondata-cpu-vexriscv-smp/pythondata_cpu_vexriscv_smp/verilog/VexRiscvLitexSmpCluster_Cc2_Iw64Is8192Iy2_Dw64Ds8192Dy2_ITs4DTs4_Ldw512_Cdma_Ood.v',
+        #               'verilog',
+        #               'work'),
+        #              ('/home/eightpins/litex/linux-on-litex-vexriscv/build/kc705/gateware/kc705.v',
+        #               'verilog',
+        #               'work')],
+        #  'toolchain': <litex.build.xilinx.vivado.XilinxVivadoToolchain object at 0x7fd6825c0e80>,
+        #  'use_default_clk': False,
+        #  'verilog_include_paths': []}
+
+    # pprint(board.soc_capabilities)
+        # {'ethernet', 'sdcard', 'serial', 'xadc', 'leds'}
+
+    # "soc" properties
+    
+    #f_soc_debug = open('debug_soc.txt','w+')
+    # for key, value in vars(soc):
+    #     print(key, file=f_soc_debug)
+    #     print(value, file = f_soc_debug)
+    # pprint(vars(soc.send_core.wb_send.RTLsend.specials))
+    # pprint(vars(soc.recv_core.packet_out))
+    #f_soc_debug.close()
+
+    # print(vars(soc))
+        # {'_fragment': <migen.fhdl.structure._Fragment object at 0x7f9cecda8d90>,
+        # '_submodules': [('crg',
+        #                 <litex_boards.targets.xilinx_kc705._CRG object at 0x7f9cece33a60>),
+        #                 ('bus',
+        #                 <litex.soc.integration.soc.SoCBusHandler object at 0x7f9cecdebfd0>),
+        #                 ('csr',
+        #                 <litex.soc.integration.soc.SoCCSRHandler object at 0x7f9cecdebfa0>),
+        #                 ('irq',
+        #                 <litex.soc.integration.soc.SoCIRQHandler object at 0x7f9cecdfb070>),
+        #                 ('ctrl',
+        #                 <litex.soc.integration.soc.SoCController object at 0x7f9cecdfb250>),
+        #                 ('cpu',
+        #                 <litex.soc.cores.cpu.vexriscv_smp.core.VexRiscvSMP object at 0x7f9cecdfb1f0>),
+        #                 ('dma_bus',
+        #                 <litex.soc.integration.soc.SoCBusHandler object at 0x7f9cecd999d0>),
+        #                 (None,
+        #                 <litex.soc.interconnect.wishbone.Converter object at 0x7f9cecda8190>),
+        #                 ('rom',
+        #                 <litex.soc.interconnect.wishbone.SRAM object at 0x7f9cecdb3b50>),
+        #                 ('sram',
+        #                 <litex.soc.interconnect.wishbone.SRAM object at 0x7f9cecd42220>),
+        #                 ('identifier',
+        #                 <litex.soc.cores.identifier.Identifier object at 0x7f9cecd4d580>),
+        #                 ('uart_phy',
+        #                 <litex.soc.cores.uart.RS232PHY object at 0x7f9cecd555b0>),
+        #                 ('uart', <litex.soc.cores.uart.UART object at 0x7f9cecd7dd30>),
+        #                 ('timer0',
+        #                 <litex.soc.cores.timer.Timer object at 0x7f9ceccee370>),
+        #                 ('ddrphy',
+        #                 <litedram.phy.s7ddrphy.K7DDRPHY object at 0x7f9cecceb7c0>),
+        #                 ('sdram',
+        #                 <litedram.core.LiteDRAMCore object at 0x7f9cec67cc40>),
+        #                 ('ethphy',
+        #                 <liteeth.phy.gmii_mii.LiteEthPHYGMIIMII object at 0x7f9cec135610>),
+        #                 ('ethmac', <liteeth.mac.LiteEthMAC object at 0x7f9cec06f7c0>),
+        #                 ('leds',
+        #                 <litex.soc.cores.led.LedChaser object at 0x7f9cebd18790>),
+        #                 ('sdphy', <litesdcard.phy.SDPHY object at 0x7f9cebd18ca0>),
+        #                 ('sdcore', <litesdcard.core.SDCore object at 0x7f9cebd358e0>),
+        #                 ('sdblock2mem',
+        #                 <litesdcard.frontend.dma.SDBlock2MemDMA object at 0x7f9cebb012b0>),
+        #                 ('sdmem2block',
+        #                 <litesdcard.frontend.dma.SDMem2BlockDMA object at 0x7f9cebacbb20>),
+        #                 ('sdirq',
+        #                 <litex.soc.interconnect.csr_eventmanager.EventManager object at 0x7f9ceba9a7f0>),
+        #                 ('xadc', <litex.soc.cores.xadc.XADC object at 0x7f9cebaa51c0>),
+        #                 ('csr_bridge',
+        #                 <litex.soc.interconnect.wishbone.Wishbone2CSR object at 0x7f9ceb7e8b80>),
+        #                 ('bus_interconnect',
+        #                 <litex.soc.interconnect.wishbone.InterconnectShared object at 0x7f9ceb7eddc0>),
+        #                 ('dma_bus_interconnect',
+        #                 <litex.soc.interconnect.wishbone.InterconnectShared object at 0x7f9ceb7edb80>),
+        #                 ('csr_bankarray',
+        #                 <litex.soc.interconnect.csr_bus.CSRBankArray object at 0x7f9ceb799940>),
+        #                 ('csr_interconnect',
+        #                 <litex.soc.interconnect.csr_bus.InterconnectShared object at 0x7f9ceb799970>)],
+        # 'build_name': 'kc705',
+        # 'bus': <litex.soc.integration.soc.SoCBusHandler object at 0x7f9cecdebfd0>,
+        # 'bus_interconnect': <litex.soc.interconnect.wishbone.InterconnectShared object at 0x7f9ceb7eddc0>,
+        # 'clk_freq': 125000000,
+        # 'config': {},
+        # 'constants': {'CONFIG_BUS_ADDRESS_WIDTH': 32,
+        #             'CONFIG_BUS_BURSTING': 0,
+        #             'CONFIG_BUS_DATA_WIDTH': 32,
+        #             'CONFIG_BUS_STANDARD': 'WISHBONE',
+        #             'CONFIG_CLOCK_FREQUENCY': 125000000,
+        #             'CONFIG_CPU_COUNT': 2,
+        #             'CONFIG_CPU_HAS_DMA_BUS': None,
+        #             'CONFIG_CPU_HAS_INTERRUPT': None,
+        #             'CONFIG_CPU_HUMAN_NAME': 'VexRiscv SMP-LINUX',
+        #             'CONFIG_CPU_NOP': 'nop',
+        #             'CONFIG_CPU_RESET_ADDR': 0,
+        #             'CONFIG_CPU_TYPE_VEXRISCV_SMP': None,
+        #             'CONFIG_CPU_VARIANT_LINUX': None,
+        #             'CONFIG_CSR_ALIGNMENT': 32,
+        #             'CONFIG_CSR_DATA_WIDTH': 32,
+        #             'CPU_DCACHE_BLOCK_SIZE': 64,
+        #             'CPU_DCACHE_SIZE': 8192,
+        #             'CPU_DCACHE_WAYS': 2,
+        #             'CPU_DTLB_SIZE': 4,
+        #             'CPU_DTLB_WAYS': 4,
+        #             'CPU_ICACHE_BLOCK_SIZE': 64,
+        #             'CPU_ICACHE_SIZE': 8192,
+        #             'CPU_ICACHE_WAYS': 2,
+        #             'CPU_ISA': 'rv32ima',
+        #             'CPU_ITLB_SIZE': 4,
+        #             'CPU_ITLB_WAYS': 4,
+        #             'ETHMAC_INTERRUPT': 2,
+        #             'ETHMAC_RX_SLOTS': 2,
+        #             'ETHMAC_SLOT_SIZE': 2048,
+        #             'ETHMAC_TX_SLOTS': 2,
+        #             'LOCALIP1': 192,
+        #             'LOCALIP2': 168,
+        #             'LOCALIP3': 1,
+        #             'LOCALIP4': 50,
+        #             'REMOTEIP1': 192,
+        #             'REMOTEIP2': 168,
+        #             'REMOTEIP3': 1,
+        #             'REMOTEIP4': 100,
+        #             'SDIRQ_INTERRUPT': 3,
+        #             'TIMER0_INTERRUPT': 1,
+        #             'UART_INTERRUPT': 0},
+        # 'cpu': <litex.soc.cores.cpu.vexriscv_smp.core.VexRiscvSMP object at 0x7f9cecdfb1f0>,
+        # 'cpu_type': 'vexriscv_smp',
+        # 'cpu_variant': 'linux',
+        # 'crg': <litex_boards.targets.xilinx_kc705._CRG object at 0x7f9cece33a60>,
+        # 'csr': <litex.soc.integration.soc.SoCCSRHandler object at 0x7f9cecdebfa0>,
+        # 'csr_bankarray': <litex.soc.interconnect.csr_bus.CSRBankArray object at 0x7f9ceb799940>,
+        # 'csr_bridge': <litex.soc.interconnect.wishbone.Wishbone2CSR object at 0x7f9ceb7e8b80>,
+        # 'csr_data_width': 32,
+        # 'csr_interconnect': <litex.soc.interconnect.csr_bus.InterconnectShared object at 0x7f9ceb799970>,
+        # 'csr_regions': {'ctrl': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb55d6d0>,
+        #                 'ddrphy': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb55d8e0>,
+        #                 'ethmac': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb566100>,
+        #                 'ethphy': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb566190>,
+        #                 'identifier_mem': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb5667c0>,
+        #                 'leds': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb566220>,
+        #                 'sdblock2mem': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb5662b0>,
+        #                 'sdcore': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb566340>,
+        #                 'sdirq': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb5663d0>,
+        #                 'sdmem2block': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb566460>,
+        #                 'sdphy': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb5664f0>,
+        #                 'sdram': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb566580>,
+        #                 'timer0': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb566610>,
+        #                 'uart': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb5666a0>,
+        #                 'xadc': <litex.soc.integration.soc.SoCCSRRegion object at 0x7f9ceb566730>},
+        # 'ctrl': <litex.soc.integration.soc.SoCController object at 0x7f9cecdfb250>,
+        # 'ddrphy': <litedram.phy.s7ddrphy.K7DDRPHY object at 0x7f9cecceb7c0>,
+        # 'dma_bus': <litex.soc.integration.soc.SoCBusHandler object at 0x7f9cecd999d0>,
+        # 'dma_bus_interconnect': <litex.soc.interconnect.wishbone.InterconnectShared object at 0x7f9ceb7edb80>,
+        # 'ethmac': <liteeth.mac.LiteEthMAC object at 0x7f9cec06f7c0>,
+        # 'ethphy': <liteeth.phy.gmii_mii.LiteEthPHYGMIIMII object at 0x7f9cec135610>,
+        # 'finalized': True,
+        # 'get_fragment_called': True,
+        # 'identifier': <litex.soc.cores.identifier.Identifier object at 0x7f9cecd4d580>,
+        # 'integrated_main_ram_size': 0,
+        # 'integrated_rom_initialized': False,
+        # 'integrated_rom_size': 65536,
+        # 'integrated_sram_size': 6144,
+        # 'irq': <litex.soc.integration.soc.SoCIRQHandler object at 0x7f9cecdfb070>,
+        # 'leds': <litex.soc.cores.led.LedChaser object at 0x7f9cebd18790>,
+        # 'logger': <Logger SoC (INFO)>,
+        # 'mem_map': {'clint': 4026597376,
+        #             'csr': 4026531840,
+        #             'main_ram': 1073741824,
+        #             'plic': 4039114752,
+        #             'rom': 0,
+        #             'sram': 268435456},
+        # 'mem_regions': {'clint': <litex.soc.integration.soc.SoCRegion object at 0x7f9cecdb34c0>,
+        #                 'csr': <litex.soc.integration.soc.SoCRegion object at 0x7f9ceb7edb50>,
+        #                 'ethmac': <litex.soc.integration.soc.SoCRegion object at 0x7f9cebd181c0>,
+        #                 'main_ram': <litex.soc.integration.soc.SoCRegion object at 0x7f9cecc924c0>,
+        #                 'opensbi': <litex.soc.integration.soc.SoCRegion object at 0x7f9cecda8160>,
+        #                 'plic': <litex.soc.integration.soc.SoCRegion object at 0x7f9cecda8df0>,
+        #                 'rom': <litex.soc.integration.soc.SoCRegion object at 0x7f9cecd421f0>,
+        #                 'sram': <litex.soc.integration.soc.SoCRegion object at 0x7f9cecd4d0d0>},
+        # 'platform': <litex_boards.platforms.xilinx_kc705.Platform object at 0x7f9ced019f10>,
+        # 'rom': <litex.soc.interconnect.wishbone.SRAM object at 0x7f9cecdb3b50>,
+        # 'sdblock2mem': <litesdcard.frontend.dma.SDBlock2MemDMA object at 0x7f9cebb012b0>,
+        # 'sdcore': <litesdcard.core.SDCore object at 0x7f9cebd358e0>,
+        # 'sdirq': <litex.soc.interconnect.csr_eventmanager.EventManager object at 0x7f9ceba9a7f0>,
+        # 'sdmem2block': <litesdcard.frontend.dma.SDMem2BlockDMA object at 0x7f9cebacbb20>,
+        # 'sdphy': <litesdcard.phy.SDPHY object at 0x7f9cebd18ca0>,
+        # 'sdram': <litedram.core.LiteDRAMCore object at 0x7f9cec67cc40>,
+        # 'sram': <litex.soc.interconnect.wishbone.SRAM object at 0x7f9cecd42220>,
+        # 'sys_clk_freq': 125000000,
+        # 'timer0': <litex.soc.cores.timer.Timer object at 0x7f9ceccee370>,
+        # 'uart': <litex.soc.cores.uart.UART object at 0x7f9cecd7dd30>,
+        # 'uart_phy': <litex.soc.cores.uart.RS232PHY object at 0x7f9cecd555b0>,
+        # 'wb_slaves': {},
+        # 'xadc': <litex.soc.cores.xadc.XADC object at 0x7f9cebaa51c0>}
+
+    #pprint(vars(soc.cpu))  
+ 
+    # {'_fragment': <migen.fhdl.structure._Fragment object at 0x7f4f3a7af940>,
+    # '_submodules': [],
+    # 'clintbus': <Record adr:dat_w:dat_r:sel:cyc:stb:ack:we:cti:bte:err at 0x7f4f3a7c94f0>,
+    # 'cpu_params': {'i_clintWishbone_ADR': <Signal clintbus_adr at 0x7f4f3a7c9520>,
+    #                 'i_clintWishbone_CYC': <Signal clintbus_cyc at 0x7f4f3a7c9760>,
+    #                 'i_clintWishbone_DAT_MOSI': <Signal clintbus_dat_w at 0x7f4f3a7c95b0>,
+    #                 'i_clintWishbone_STB': <Signal clintbus_stb at 0x7f4f3a7c97f0>,
+    #                 'i_clintWishbone_WE': <Signal clintbus_we at 0x7f4f3a7c9910>,
+    #                 'i_dBridge_dram_cmd_ready': <Signal cmd_ready at 0x7f4f39b16f10>,
+    #                 'i_dBridge_dram_rdata_payload_data': <Signal rdata_payload_data at 0x7f4f39b26a60>,
+    #                 'i_dBridge_dram_rdata_valid': <Signal rdata_valid at 0x7f4f39b267c0>,
+    #                 'i_dBridge_dram_wdata_ready': <Signal wdata_ready at 0x7f4f39b263d0>,
+    #                 'i_debugCd_external_clk': <migen.fhdl.structure.ClockSignal object at 0x7f4f3a7a25b0>,
+    #                 'i_debugCd_external_reset': <migen.fhdl.structure._Operator object at 0x7f4f3a7a2c70>,
+    #                 'i_debugPort_capture': <Signal jtag_capture at 0x7f4f3a811220>,
+    #                 'i_debugPort_enable': <Signal jtag_enable at 0x7f4f3a7a2100>,
+    #                 'i_debugPort_reset': <Signal jtag_reset at 0x7f4f3a7a2310>,
+    #                 'i_debugPort_shift': <Signal jtag_shift at 0x7f4f3a7a21f0>,
+    #                 'i_debugPort_tdi': <Signal jtag_tdi at 0x7f4f3a7a2430>,
+    #                 'i_debugPort_update': <Signal jtag_update at 0x7f4f3a7a2280>,
+    #                 'i_dma_wishbone_ADR': <Signal dma_bus_adr at 0x7f4f3a7a2d30>,
+    #                 'i_dma_wishbone_CYC': <Signal dma_bus_cyc at 0x7f4f3a7a2fa0>,
+    #                 'i_dma_wishbone_DAT_MOSI': <Signal dma_bus_dat_w at 0x7f4f3a7a2df0>,
+    #                 'i_dma_wishbone_SEL': <Signal dma_bus_sel at 0x7f4f3a7a2f10>,
+    #                 'i_dma_wishbone_STB': <migen.fhdl.structure._Operator object at 0x7f4f3a7af520>,
+    #                 'i_dma_wishbone_WE': <Signal dma_bus_we at 0x7f4f3a7af190>,
+    #                 'i_iBridge_dram_cmd_ready': <Signal cmd_ready at 0x7f4f39b160a0>,
+    #                 'i_iBridge_dram_rdata_payload_data': <Signal rdata_payload_data at 0x7f4f39b16bb0>,
+    #                 'i_iBridge_dram_rdata_valid': <Signal rdata_valid at 0x7f4f39b16910>,
+    #                 'i_iBridge_dram_wdata_ready': <Signal wdata_ready at 0x7f4f39b16520>,
+    #                 'i_interrupts': <Signal interrupt at 0x7f4f3a7a24c0>,
+    #                 'i_jtag_clk': <Signal jtag_clk at 0x7f4f3a7a2070>,
+    #                 'i_peripheral_ACK': <Signal pbus_ack at 0x7f4f3a7a2910>,
+    #                 'i_peripheral_DAT_MISO': <Signal pbus_dat_r at 0x7f4f3a7a26d0>,
+    #                 'i_peripheral_ERR': <Signal pbus_err at 0x7f4f3a7a2b50>,
+    #                 'i_plicWishbone_ADR': <Signal plicbus_adr at 0x7f4f3a7bde50>,
+    #                 'i_plicWishbone_CYC': <Signal plicbus_cyc at 0x7f4f3a7c90d0>,
+    #                 'i_plicWishbone_DAT_MOSI': <Signal plicbus_dat_w at 0x7f4f3a7bdee0>,
+    #                 'i_plicWishbone_STB': <Signal plicbus_stb at 0x7f4f3a7c9160>,
+    #                 'i_plicWishbone_WE': <Signal plicbus_we at 0x7f4f3a7c9280>,
+    #                 'o_clintWishbone_ACK': <Signal clintbus_ack at 0x7f4f3a7c9880>,
+    #                 'o_clintWishbone_DAT_MISO': <Signal clintbus_dat_r at 0x7f4f3a7c9640>,
+    #                 'o_dBridge_dram_cmd_payload_addr': <Signal cmd_payload_addr at 0x7f4f39b261f0>,
+    #                 'o_dBridge_dram_cmd_payload_we': <Signal cmd_payload_we at 0x7f4f39b26160>,
+    #                 'o_dBridge_dram_cmd_valid': <Signal cmd_valid at 0x7f4f39b16e80>,
+    #                 'o_dBridge_dram_rdata_ready': <Signal rdata_ready at 0x7f4f39b26850>,
+    #                 'o_dBridge_dram_wdata_payload_data': <Signal wdata_payload_data at 0x7f4f39b265e0>,
+    #                 'o_dBridge_dram_wdata_payload_we': <Signal wdata_payload_we at 0x7f4f39b26670>,
+    #                 'o_dBridge_dram_wdata_valid': <Signal wdata_valid at 0x7f4f39b26340>,
+    #                 'o_debugPort_tdo': <Signal jtag_tdo at 0x7f4f3a7a23a0>,
+    #                 'o_dma_wishbone_ACK': <Signal dma_bus_ack at 0x7f4f3a7af100>,
+    #                 'o_dma_wishbone_DAT_MISO': <Signal dma_bus_dat_r at 0x7f4f3a7a2e80>,
+    #                 'o_dma_wishbone_STALL': <Signal dma_bus_stall at 0x7f4f3a7a2d00>,
+    #                 'o_iBridge_dram_cmd_payload_addr': <Signal cmd_payload_addr at 0x7f4f39b16340>,
+    #                 'o_iBridge_dram_cmd_payload_we': <Signal cmd_payload_we at 0x7f4f39b162b0>,
+    #                 'o_iBridge_dram_cmd_valid': <Signal cmd_valid at 0x7f4f39b92fd0>,
+    #                 'o_iBridge_dram_rdata_ready': <Signal rdata_ready at 0x7f4f39b169a0>,
+    #                 'o_iBridge_dram_wdata_payload_data': <Signal wdata_payload_data at 0x7f4f39b16730>,
+    #                 'o_iBridge_dram_wdata_payload_we': <Signal wdata_payload_we at 0x7f4f39b167c0>,
+    #                 'o_iBridge_dram_wdata_valid': <Signal wdata_valid at 0x7f4f39b16490>,
+    #                 'o_peripheral_ADR': <Signal pbus_adr at 0x7f4f3a7a25e0>,
+    #                 'o_peripheral_BTE': <Signal pbus_bte at 0x7f4f3a7a2ac0>,
+    #                 'o_peripheral_CTI': <Signal pbus_cti at 0x7f4f3a7a2a30>,
+    #                 'o_peripheral_CYC': <Signal pbus_cyc at 0x7f4f3a7a27f0>,
+    #                 'o_peripheral_DAT_MOSI': <Signal pbus_dat_w at 0x7f4f3a7a2580>,
+    #                 'o_peripheral_SEL': <Signal pbus_sel at 0x7f4f3a7a2760>,
+    #                 'o_peripheral_STB': <Signal pbus_stb at 0x7f4f3a7a2880>,
+    #                 'o_peripheral_WE': <Signal pbus_we at 0x7f4f3a7a29a0>,
+    #                 'o_plicWishbone_ACK': <Signal plicbus_ack at 0x7f4f3a7c91f0>,
+    #                 'o_plicWishbone_DAT_MISO': <Signal plicbus_dat_r at 0x7f4f3a7bdf70>},
+    # 'dma_bus': <Record adr:dat_w:dat_r:sel:cyc:stb:ack:we:cti:bte:err at 0x7f4f3a7a2cd0>,
+    # 'finalized': True,
+    # 'get_fragment_called': True,
+    # 'human_name': 'VexRiscv SMP-LINUX',
+    # 'interrupt': <Signal interrupt at 0x7f4f3a7a24c0>,
+    # 'jtag_capture': <Signal jtag_capture at 0x7f4f3a811220>,
+    # 'jtag_clk': <Signal jtag_clk at 0x7f4f3a7a2070>,
+    # 'jtag_enable': <Signal jtag_enable at 0x7f4f3a7a2100>,
+    # 'jtag_reset': <Signal jtag_reset at 0x7f4f3a7a2310>,
+    # 'jtag_shift': <Signal jtag_shift at 0x7f4f3a7a21f0>,
+    # 'jtag_tdi': <Signal jtag_tdi at 0x7f4f3a7a2430>,
+    # 'jtag_tdo': <Signal jtag_tdo at 0x7f4f3a7a23a0>,
+    # 'jtag_update': <Signal jtag_update at 0x7f4f3a7a2280>,
+    # 'memory_buses': [<litedram.common.LiteDRAMNativePort object at 0x7f4f39c78f10>,
+    #                 <litedram.common.LiteDRAMNativePort object at 0x7f4f39b168e0>],
+    # 'pbus': <Record adr:dat_w:dat_r:sel:cyc:stb:ack:we:cti:bte:err at 0x7f4f3a7a2550>,
+    # 'periph_buses': [<Record adr:dat_w:dat_r:sel:cyc:stb:ack:we:cti:bte:err at 0x7f4f3a7a2550>],
+    # 'platform': <litex_boards.platforms.xilinx_kc705.Platform object at 0x7f4f3aa2ef10>,
+    # 'plicbus': <Record adr:dat_w:dat_r:sel:cyc:stb:ack:we:cti:bte:err at 0x7f4f3a7bde20>,
+    # 'reset': <Signal reset at 0x7f4f3a811c40>,
+    # 'reset_address': 0,
+    # 'use_rom': True,
+    # 'variant': 'linux'}
 if __name__ == "__main__":
     main()
