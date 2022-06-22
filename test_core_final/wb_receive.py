@@ -47,4 +47,4 @@ class RTLreceive (Module, AutoCSR, AutoDoc):
             i_packet_out_valid = self.packet_out_valid,
             )
 
-        platform.add_source("./test_core/receive.v")
+        platform.add_source("./receive.v")
