@@ -47,7 +47,7 @@ module test_receive #(
         end
     end
 
-    assign wen = read_req & (!empty);
+    assign wen = read_req & (!empty) & packet_out_valid ;
     assign packet_in = in;
     assign input_buffer_empty = empty;
 

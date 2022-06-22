@@ -31,8 +31,8 @@ class RTLsend (Module, AutoCSR, AutoDoc):
         ]
 
         PACKET_WIDTH = 32    
-        packet_out = Signal()
-        packet_out_valid = Signal()
+        self.packet_out = Signal()
+        self.packet_out_valid = Signal()
         self.specials += Instance("test_send",
             p_PACKET_WIDTH = PACKET_WIDTH,
             i_clk = ClockSignal(),
@@ -40,8 +40,8 @@ class RTLsend (Module, AutoCSR, AutoDoc):
             i_tick = tick,
             i_input_buffer_empty = input_buffer_empty,
             i_packet_in = packet_in,
-            o_packet_out = packet_out,
-            o_packet_out_valid = packet_out_valid,
+            o_packet_out = self.packet_out,
+            o_packet_out_valid = self.packet_out_valid,
             )
 
-        platform.add_source("/home/eightpins/litex/IP/test_core/send.v")
+        platform.add_source("./test_core/send.v")
