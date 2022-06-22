@@ -44,4 +44,4 @@ class RTLsend (Module, AutoCSR, AutoDoc):
             o_packet_out_valid = self.packet_out_valid,
             )
 
-        platform.add_source("./test_core/send.v")
+        platform.add_source("./send.v")
