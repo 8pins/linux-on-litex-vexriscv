@@ -25,8 +25,8 @@ from litex.soc.cores.clock import S7MMCM
 
 from litex.tools.litex_json2dts_linux import generate_dts
 
-from test_core.wb_send import RTLsend
-from test_core.wb_receive import RTLreceive
+from test_core_final.wb_send import RTLsend
+from test_core_final.wb_receive import RTLreceive
 
 
 # SoCLinux -----------------------------------------------------------------------------------------
